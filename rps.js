@@ -57,7 +57,29 @@ function getRandomArbitrary(min, max) { //Selects random number to help assign s
     return Math.random() * (max - min) + min;
 }
 function game(){
-    playRound()//runs whole game
+    for (let i = 0; i < 10; i++) {
+        if (playerCounter < 5 && computerCounter < 5){
+        computerSelection = getComputerChoice();
+        playerSelection = //player button they clicked;
+        if (playRound() === "win"){
+            playerCounter++;
+            console.log("You win.");
+        }
+        else if (playRound() === "lose"){
+            computerCounter++;
+            console.log("You lose.");
+        }
+        else {
+            console.log("You tie.");
+        }
+      }
+      else if (playerCounter == 5){
+        console.log("Player Wins!")
+      }
+      else if (computerCounter == 5){
+        console.log("Computer Wins!")
+      }
+    
 }
 //Variables
   const playerSelection = "rock";
