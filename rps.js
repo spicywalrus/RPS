@@ -9,33 +9,36 @@ else {
     window.prompt("Rock, Paper, Scissors?");//how to loop this?
 }
 
-//Functions
-function promptPlayer(playerChoice){
-    const lowerCaseChoice = toLowerCase(playerChoice);//take prompt and make string into all lowercase.
-    playerSelection = lowerCaseChoice; //assign lowercase string to player selection
-}
+//Functions}
 function playRound(playerSelection, computerSelection) {
+    let roundResult = "tie";
     if (playerSelection === computerSelection){
-        console.log("Tie. Redo.");
-        //prompt player again
+        roundResult = "tie";
+        return roundResult;
     }
     else if (playerSelection === "rock" && computerSelection === "paper"){
-        console.log("You lose!");
+        roundResult = "lose";
+        return roundResult;
     }
     else if (playerSelection === "rock" && computerSelection === "scissors"){
-        console.log("You win!");
+        roundResult = "win";
+        return roundResult;
     }
     else if (playerSelection === "scissors" && computerSelection === "paper"){
-        console.log("You win!");
+        roundResult = "win";
+        return roundResult;
     }
     else if (playerSelection === "scissors" && computerSelection === "rock"){
-        console.log("You lose!");
+        roundResult = "lose";
+        return roundResult;
     }
     else if (playerSelection === "paper" && computerSelection === "rock"){
-        console.log("You win!");
+        roundResult = "win";
+        return roundResult;
     }
     else if (playerSelection === "paper" && computerSelection === "scissors"){ //probably much more efficient way to do this
-        console.log("You lose!");
+        roundResult = "lose";
+        return roundResult;
     }
     else {
         console.log("Edge Case, something is wrong.");
@@ -47,27 +50,30 @@ function getComputerChoice(){ //does this return a string?
     switch (rpsSelector){ //assign and return selected string
         case '1':
             rpsChoice = "rock";
+            return rpsChoice;
         case '2':
             rpsChoice = "paper";
+            return rpsChoice;
         case '3':
             rpsChoice = "scissors";
+            return rpsChoice;
         default:
-            "default rock";
-        break;
+            rpsChoice = "default rock";
+            return rpsChoice;
     }
-    console.log(rpsChoice);
-    return rpsChoice; //should return switch statement result
     
 }
 function getRandomArbitrary(min, max) { //Selects random number to help assign symbol choice
     return Math.random() * (max - min) + min;
 }
 function game(){
-    playRound//runs whole game
+    playRound()//runs whole game
 }
 //Variables
   const playerSelection = "rock";
   const computerSelection = getComputerChoice();
+  let playerCounter = 0;
+  let computerCounter = 0;
   console.log(playRound(playerSelection, computerSelection));
 
 //Log
