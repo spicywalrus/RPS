@@ -1,7 +1,17 @@
+//Prompt
+let choice = window.prompt("Rock, Paper, Scissors?");
+
+if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissors") {
+  alert("You have selected your fate!");
+}
+else {
+    alert("Try Again");
+    window.prompt("Rock, Paper, Scissors?");//how to loop this?
+}
 
 //Functions
 function promptPlayer(playerChoice){
-    let lowerCaseChoice = toLowerCase(playerChoice);//take prompt and make string into all lowercase.
+    const lowerCaseChoice = toLowerCase(playerChoice);//take prompt and make string into all lowercase.
     playerSelection = lowerCaseChoice; //assign lowercase string to player selection
 }
 function playRound(playerSelection, computerSelection) {
@@ -27,6 +37,9 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection === "paper" && computerSelection === "scissors"){ //probably much more efficient way to do this
         console.log("You lose!");
     }
+    else {
+        console.log("Edge Case, something is wrong.");
+    }
   }
 function getComputerChoice(){ //does this return a string?
     let rpsChoice = "poopie"; //initialized
@@ -50,7 +63,7 @@ function getRandomArbitrary(min, max) { //Selects random number to help assign s
     return Math.random() * (max - min) + min;
 }
 function game(){
-    //runs whole game
+    playRound//runs whole game
 }
 //Variables
   const playerSelection = "rock";
