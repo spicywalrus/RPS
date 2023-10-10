@@ -1,13 +1,3 @@
-//Prompt
-let choice = window.prompt("Rock, Paper, Scissors?");
-
-if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissors") {
-  alert("You have selected your fate!");
-}
-else {
-    alert("Try Again");
-    window.prompt("Rock, Paper, Scissors?");//how to loop this?
-}
 
 //Functions}
 function playRound(playerSelection, computerSelection) {
